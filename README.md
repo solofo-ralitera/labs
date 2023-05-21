@@ -30,13 +30,7 @@ Autre IDE ?
 - [export / import](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Modules)
 
 ## TypeScript - POO
-- Classe
-- Attribut
-- [Annotation/décorateur](https://www.typescriptlang.org/docs/handbook/decorators.html)
-- [Type de base](https://www.typescriptlang.org/docs/handbook/basic-types.html) (# autres langages typés)
-- Custom type: type, interface, class (R&D)
+> cf branche 1
 
 ## Angular - Structure
-- angular.json
-- index.html - app-root
-- main.js
+> cf branche 2
