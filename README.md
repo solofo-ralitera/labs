@@ -1,14 +1,10 @@
-## Angular - Module
-- > ng new [mon-projet]
+## Angular - Component - zone
+- Test avec click button  
 
-## Structure
-- angular.json
-- main.ts
-- app.module.ts, 
-- [modules](https://angular.io/guide/architecture-modules)
-    - declarations
-    - imports
-    - providers
-    - bootstrap
+⚠️WARNING⚠️  
 
-> switch branche 2
+- Désactiver ngZone in main.ts ([?](https://angular.io/guide/zone))
+- Trigger change detection avec ChangeDetectorRef
+- Intro à signal
+
+> switch branch 3
