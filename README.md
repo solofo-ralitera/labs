@@ -10,6 +10,7 @@
 - index.html / app-root
 - main.js
 - app.component.ts, [décorateur](https://www.typescriptlang.org/docs/handbook/decorators.html)
+- > npm start
 
 ## Standalone VS module
 - nouveautés récentes: `standalone`  
