@@ -37,4 +37,4 @@ Autre IDE ?
 > cf branche 2
 
 ## Angular - Component
-> cf branche 2
+> cf branche 3
