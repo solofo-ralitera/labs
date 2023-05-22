@@ -4,6 +4,7 @@
 - Logique informatique
 - Recherche de solution -> état final recherché
 - Implémentation de la solution
+- debug
 - Bagage technique, xp: pratique pratique pratique
 
 ## Angular
