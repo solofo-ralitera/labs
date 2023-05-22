@@ -35,3 +35,6 @@ Autre IDE ?
 
 ## Angular - Structure
 > cf branche 2
+
+## Angular - Component
+> cf branche 2
