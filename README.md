@@ -8,5 +8,6 @@
 - [Classe](https://www.typescriptlang.org/docs/handbook/2/classes.html) (lc) `new Class + export/import`
 - Attribut (lc)
 - [Types de base](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-- Custom type: type, interface, class (r&d)
+- Custom type: type, interface, class (r)
 
+> switch branch main
