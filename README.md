@@ -12,6 +12,9 @@
 - app.component.ts, [décorateur](https://www.typescriptlang.org/docs/handbook/decorators.html)
 
 ## Standalone VS module
-- nouveautés récentes: `standalone`
-> switch branche 2.1
+- nouveautés récentes: `standalone`  
+
+> switch branch 2.1  
+
+> switch main
 
