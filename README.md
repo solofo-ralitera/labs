@@ -15,6 +15,7 @@
             - Unicité avec [InjectionToken](https://angular.io/api/core/InjectionToken)
         - useClass
         - useValue
+        - useFactory
 - structure des services
     - component VS service
 - Injection entre service
