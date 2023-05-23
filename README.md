@@ -2,6 +2,7 @@
 - Injection de dépendancesingleton
     - quesako
     - delegation de new (Injector)
+    - singleton
 - class service
 - Décorateur @Injectable
     - provideIn root
