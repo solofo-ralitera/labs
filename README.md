@@ -1,10 +1,7 @@
-# Angular - Directive
-- quesako
-- (ngTemplate)
-- (ngContainer - ngTemplateOutlet)
-
 ## Attribute directive
-> switch branche 5.1
-
-## Structural directive
-> switch branche 5.2
+- Décorateur @Directive
+- ElementRef - nativeElement
+- ngAfterViewInit
+- @Input
+- @HostListener
+- (r) blink
