@@ -9,5 +9,6 @@
 - Attribut (lc)
 - [Types de base](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 - Custom type: type, interface, class (r)
+- encapsulation, extends, interface... (r)
 
 > switch branch main
