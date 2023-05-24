@@ -1,2 +1,13 @@
 ## Structural directive
-- create attribute directive
+- create attribute directive, blink
+- préfix * / ng-template, `<ng-template customDirective>` == `<div *customDirective>`
+- DI:
+    - ViewContainerRef
+    - TemplateRef<unknown>
+    - ElementRef
+- AfterViewInit
+    - ViewContainer createEmbeddedView
+- (l) Implement blink
+- Multiple Input
+    - <> attribute directive
+    - Camel: directiveNameOtherInput
