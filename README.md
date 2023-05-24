@@ -8,3 +8,5 @@
 
 ## Structural directive
 > switch branche 5.2
+
+## (r) Directives dans CommonModule
