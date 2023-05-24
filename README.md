@@ -38,5 +38,6 @@
     - @Output mot clé: suffix `...Change`
     - `[customDirective]="myModel" (customDirectiveChange)="myModel = $event"` === `[(customDirective)]="myModel"`
 
+(r) Début (mini) projet
 
 > switch branch main
