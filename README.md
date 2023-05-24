@@ -41,3 +41,6 @@ Autre IDE ?
 
 ## Angular - Service
 > cf branche 4
+
+## Angular - Directive
+> cf branche 5
