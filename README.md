@@ -5,6 +5,7 @@
 - DI: ElementRef / nativeElement
 - ngAfterViewInit
 - @Input
+    - [...]="" VS ...=""
 - @HostListener
 - (r) blink
 
