@@ -14,3 +14,5 @@
 - (r) Implémenter un directive pour afficher une liste de texte, tips:
     - contexte dans un template (createEmbeddedView)
     - variable dans template (as, #)
+
+> back to branch 5
