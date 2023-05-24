@@ -1,6 +1,8 @@
 ## Attribute directive
 - Décorateur @Directive
-- ElementRef - nativeElement
+    - standalone
+    - selector [...]
+- ElementRef / nativeElement
 - ngAfterViewInit
 - @Input
 - @HostListener
