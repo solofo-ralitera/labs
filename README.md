@@ -2,7 +2,7 @@
 - Décorateur @Directive
     - standalone
     - selector [...]
-- ElementRef / nativeElement
+- DI: ElementRef / nativeElement
 - ngAfterViewInit
 - @Input
 - @HostListener
