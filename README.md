@@ -38,6 +38,12 @@
     - @Output mot clé: suffix `...Change`
     - `[customDirective]="myModel" (customDirectiveChange)="myModel = $event"` === `[(customDirective)]="myModel"`
 
+## [lifecycle](https://angular.io/guide/lifecycle-hooks)
+  - ngOnInit
+  - ngAfterViewInit
+  - ngOnDestroy
+  - (r) voir les autres hooks
+
 (r) Début (mini) projet
 
 > switch branch main
