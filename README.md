@@ -1,5 +1,7 @@
 # Angular - Directive
 - quesako
+- (ngTemplate)
+- (ngContainer - ngTemplateOutlet)
 
 ## Attribute directive
 > switch branche 5.1
