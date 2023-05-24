@@ -23,8 +23,6 @@
     - component VS service
 - Injection entre service
 - (r) Implementer un système de DI
-    - 1 main classe
-    - Plusieurs classe dépendance à injecter dans la main classe            
 
 > switch main
 
