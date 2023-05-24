@@ -4,10 +4,13 @@
 - DI:
     - ViewContainerRef
     - TemplateRef<unknown>
-    - ElementRef
+    - !ElementRef
 - AfterViewInit
     - ViewContainer createEmbeddedView
 - (l) Implement blink
 - Multiple Input
     - <> attribute directive
-    - Camel: directiveNameOtherInput
+    - Camel: @Input('blinkOtherparameter')
+- (r) Implémenter un directive pour afficher une liste de texte, tips:
+    - contexte dans un template (createEmbeddedView)
+    - variable dans template (as, #)
