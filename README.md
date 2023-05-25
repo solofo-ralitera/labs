@@ -1,19 +1,22 @@
-# Intro - Base
+## Formation angular - DTC Juin-Août 2023
 
-## Développeur
+
+## Intro - Base
+
+### Développeur
 - Logique informatique
 - Recherche de solution -> état final recherché
 - Implémentation de la solution
 - debug
-- Bagage technique, xp: pratique pratique pratique
+- Bagages techniques, xp: pratique pratique pratique
 
-## Angular
+### Angular
 - HTML/CSS
 - TypeScript
     - Javascript
     - POO
 
-## IDE
+### IDE
 Outil de travail: Visual Studio Code + Extensions: 
 - Angular Language Service
 - [ESLint](https://eslint.org/). Installer: 
@@ -22,28 +25,28 @@ Outil de travail: Visual Studio Code + Extensions:
 
 Autre IDE ?
 
-## Angular - Installation
+### Angular - Installation
 - Installer Node
 - Installer Angular CLI: npm install -g @angular/cli
 - Instancier un projet angular: ng new [mon-app] –standalone
 
-## Javascript - Modules
+### Javascript - Modules
 - [export / import](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Modules)
 
-## TypeScript - POO
+### TypeScript - POO
 > cf branche 1
 
-## Angular - Structure
+### Angular - Structure
 > cf branche 2
 
-## Angular - Component
+### Angular - Component
 > cf branche 3
 
-## Angular - Service
+### Angular - Service
 > cf branche 4
 
-## Angular - Directive
+### Angular - Directive
 > cf branche 5
 
-## Angular - Form
+### Angular - Form
 > cf branche 6
