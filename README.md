@@ -1,8 +1,7 @@
 ## [Angular - Service](https://angular.io/guide/architecture-services)
-- Injection de dépendancesingleton
+- Injection de dépendance
     - quesako
     - delegation de new (Injector)
-    - singleton
 - class service
 - Décorateur @Injectable
     - provideIn root
@@ -19,6 +18,7 @@
         - useClass
         - useValue
         - useFactory
+- singleton: @provideIn VS providers[]
 - structure des services
     - component VS service
 - Injection entre service
