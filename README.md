@@ -46,7 +46,8 @@ Autre IDE ?
 > cf branche 4
 
 ### Angular - Directive
-> cf branche 5
+- cf branche 5
+- (r) Implement generic widget
 
 ### Angular - Form
 > cf branche 6
