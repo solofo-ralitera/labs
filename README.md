@@ -13,6 +13,6 @@
     - Camel: @Input('blinkOtherparameter')
 - (r) Implémenter un directive pour afficher une liste de texte, tips:
     - contexte dans un template (createEmbeddedView)
-    - variable dans template (as, #)
+    - variable dans template (as, #, @ViewChild(static, read...))
 
 > back to branch 5
