@@ -20,6 +20,7 @@
         - useClass
         - useValue
         - useFactory
+        - useExisting
 - singleton: @provideIn VS providers[]
 - structure des services
 - Injection entre service
