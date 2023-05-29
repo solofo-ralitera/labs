@@ -1,4 +1,6 @@
 ## [Angular - Service](https://angular.io/guide/architecture-services)
+- Quesako
+    - component VS service
 - Injection de dépendance
     - quesako
     - delegation de new (Injector)
@@ -20,7 +22,6 @@
         - useFactory
 - singleton: @provideIn VS providers[]
 - structure des services
-    - component VS service
 - Injection entre service
 - (r) Implementer un système de DI
 
