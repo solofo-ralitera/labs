@@ -2,7 +2,7 @@
 - quesako
 - (ngTemplate)
 - (ngContainer - ngTemplateOutlet)
-- (ngContent)
+- (ngContent - @ContentChild)
 
 ## Attribute directive
 > switch branche 5.1
