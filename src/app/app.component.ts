@@ -8,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular';
+  title: string = 'angular';
+  counter: number = 0;
+
+  constructor() {
+    window.setInterval(() => {
+      this.counter++;
+    }, 1000)
+  }
+  
 }
