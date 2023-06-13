@@ -2,7 +2,6 @@
 
 ## Structure
 - .ts, .html, .css, .spec.ts
-    - [encapsulation css](https://angular.io/guide/view-encapsulation)
     - [inline style/template](https://angular.io/guide/component-styles)
 
 ## Binding et change deletction
@@ -16,8 +15,11 @@
 ## Interaction entre composant
 - création new component > ng generate component [nom composant] --standalone ( == ng g c [nom composant])
 - standalone vs module (cf branche 2.1)
-- import CommonModule
 - selector, balise
+- [ViewEncapsulation](https://angular.io/guide/view-encapsulation)
+    - Emulated
+    - ShadowDom
+    - None
 
     ### Partage données [parent->enfant](https://angular.io/guide/inputs-outputs)
     - @Input decorateur
@@ -37,6 +39,10 @@
     ### Two way binding [parent<->enfant]
     - @Output mot clé: suffix `...Change`
     - `[customDirective]="myModel" (customDirectiveChange)="myModel = $event"` === `[(customDirective)]="myModel"`
+
+## ChangeDetection OnPush
+    - event
+    - ref change
 
 ## [lifecycle](https://angular.io/guide/lifecycle-hooks)
   - ngOnInit
