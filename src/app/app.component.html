@@ -1,1 +1,8 @@
-{{counter}}
+<h1 class="test">{{counter}}</h1>
+<button (click)="testClick($event)" class="testcolor">
+  Test
+</button>
+<input (input)="changed()" />
+
+<app-test inputval="11" (onButtonCLick)="logEvent($event)"></app-test>
+<app-test></app-test>
