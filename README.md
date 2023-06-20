@@ -6,7 +6,6 @@
     - delegation de new (Injector)
 - class service
 - Décorateur @Injectable
-    - provideIn root
     - Injection dans un component
         - constructeur
         - fonction inject
@@ -21,7 +20,8 @@
         - useValue
         - useFactory
         - useExisting
-- singleton: @provideIn VS providers[]
+- singleton: provideIn root VS providers[]
+    - partage de données
 - structure des services
 - Injection entre service
 - (r) Implementer un système de DI
