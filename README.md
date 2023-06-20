@@ -5,23 +5,34 @@
     - quesako
     - delegation de new (Injector)
 - class service
-- Décorateur @Injectable
-    - Injection dans un component
+- Injection dans un component
+    - providers
+        - provide
+        - useClass
+    - fonction inject
+        - initialisation
         - constructeur
-        - fonction inject
-        - (r) use case constructeur VS inject
-    - erreur `ERROR NullInjectorError`
+    - injection dans constructeur
+    - (r) use case constructeur VS inject
+    - providers->useClass => new Class()
+- singleton
+    - Décorateur @Injectable
+    - providedIn root
+    - usage: données partagées
+        - intro NgRx
+- erreur `ERROR NullInjectorError`
+    - (r) résolution des dépendance (injector tree)
+
 - Injection Token
     - @Component providers (standalone)
         - provide (uk)
-            - constructor decorateur @Inject('TOKEN')
+            - constructor decorateur @Inject('TOKEN'), @Inject(MyClass)
             - Unicité avec [InjectionToken](https://angular.io/api/core/InjectionToken)
         - useClass
         - useValue
         - useFactory
         - useExisting
-- singleton: provideIn root VS providers[]
-    - partage de données
+    - {provide: MyClass, useClass: MyClass} == MyClass
 - structure des services
 - Injection entre service
 - (r) Implementer un système de DI
