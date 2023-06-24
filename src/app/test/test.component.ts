@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -8,7 +8,14 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
   styleUrls: ['./test.component.css'],
   encapsulation: ViewEncapsulation.ShadowDom,
 })
-export class TestComponent {
+export class TestComponent implements OnChanges {
+  private _title: number = 0;
+  @Input()
+  set title(txt: number) {
+    this._title = txt;
+    // 
+  };
+
   @Input()
   text: string = '';
 
@@ -19,6 +26,10 @@ export class TestComponent {
   onButtonCLick: EventEmitter<string> = new EventEmitter();
 
   constructor() {
+  }
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
   }
 
   changeText(e: Event) {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { TestComponent } from './test/test.component';
 import { ViewEncapsulation } from '@angular/core';
 
@@ -10,24 +10,31 @@ import { ViewEncapsulation } from '@angular/core';
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-  title: string = 'angular';
+export class AppComponent implements OnInit {
   counter: number = 0;
-
-  vartest() {
-    return 'eeeee';
-  } 
+  title: string = 'angular';
+  obj: {
+    text: string,
+    counter: number,
+  } = {
+    text: 'Hello',
+    counter: 0,
+  };
 
   constructor() {
-    window.setInterval(() => {
-      this.counter++;
-    }, 1000)
   }
 
-  public testClick(e: unknown): void {
-    console.log(e);
-    console.log('Click')
+ 
+  ngOnInit(): void {
+    window.setInterval(() => {
+      this.obj = {...this.obj, counter: ++this.obj.counter};
+    }, 1000);
+  }
+
+  public testClick(): void {
+    console.log(this.obj);
   }
   
   public changed(): void {
