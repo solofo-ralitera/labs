@@ -14,6 +14,7 @@ import { ViewEncapsulation } from '@angular/core';
 export class AppComponent {
   title: string = 'angular';
   counter: number = 0;
+
   vartest() {
     return 'eeeee';
   } 
@@ -35,5 +36,9 @@ export class AppComponent {
 
   public logEvent(text: string): void {
     console.log(text);
+  }
+
+  public getText(): string {
+    return 'zzeze';
   }
 }
