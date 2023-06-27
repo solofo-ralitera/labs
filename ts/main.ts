@@ -1,21 +1,20 @@
 /**
  * Exo1: un personne peut ecrire sur un support (standard output, fichier, bdd, tableau, cahier...)
  * 
- * Etape 6: 
- *  Implémentation de la methode delete
- * 
- * Contrainte:
- *  Chaque support doit implémenter la méthode delete même s'il n'est pas censé le supporter (ex CD)
- * 
- * Evolution: se soustraire à cette contrainte
- */
+ * Etape 7: 
+ *  Création de deux interface Writable et Deletable à la plasse de Support
+ *  Composition par implements des types de support
+*/
 
-abstract class Support {
-  public abstract ecrire(text: string): void;
-  public abstract delete(): void;
+interface Writable {
+  ecrire(text: string): void;
 } 
 
-class StdOutput extends Support {
+interface Deletable {
+  delete(): void;
+}
+
+class StdOutput implements Writable, Deletable {
   public ecrire(text: string): void {
     console.log('Standard output: ', text);
   }
@@ -25,7 +24,7 @@ class StdOutput extends Support {
   }
 }
 
-class Fichier extends Support {
+class Fichier implements Writable, Deletable {
   public ecrire(text: string): void {
     console.log('Fichier ecrire: ', text);
   }
@@ -35,22 +34,18 @@ class Fichier extends Support {
   }
 }
 
-class Cd extends Support {
+class Cd implements Writable {
   public ecrire(text: string): void {
     console.log('CD ecrire: ', text);
-  }
-
-  public delete(): void {
-    throw new Error('CD cannot be erased');
   }
 }
 
 class Person {
-  public ecrire(text: string, support: Support) {
+  public ecrire(text: string, support: Writable) {
       support.ecrire(text);
   }
 
-  public delete(support: Support) {
+  public delete(support: Deletable) {
     support.delete();
 }
 }
