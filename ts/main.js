@@ -1,14 +1,12 @@
 /**
  * Exo1: un personne peut ecrire sur un support (standard output, fichier, bdd, tableau, cahier...)
  *
- * Etape 4:
- *  Création d'une lcass mère pour tous les support
- *  Plus besoin de modifier Person pour écrire sur un nouveau support
+ * Etape 6:
+ *  Implémentation de la methode delete
  *
  * Contrainte:
- *  - Chaque support n'est pas obligé d'implémenter la méthode écrire
- *
- * Evolution: forcer chaque support à implémenter ecrire
+ *  Chaque support doit implémenter
+ * Evolution: Possibilité d'effacer un support
  */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -38,6 +36,9 @@ var StdOutput = /** @class */ (function (_super) {
     StdOutput.prototype.ecrire = function (text) {
         console.log('Standard output: ', text);
     };
+    StdOutput.prototype.delete = function () {
+        console.log('Standard output delete');
+    };
     return StdOutput;
 }(Support));
 var Fichier = /** @class */ (function (_super) {
@@ -47,6 +48,9 @@ var Fichier = /** @class */ (function (_super) {
     }
     Fichier.prototype.ecrire = function (text) {
         console.log('Fichier ecrire: ', text);
+    };
+    Fichier.prototype.delete = function () {
+        console.log('Fichier delete');
     };
     return Fichier;
 }(Support));
@@ -58,6 +62,9 @@ var Cd = /** @class */ (function (_super) {
     Cd.prototype.ecrire = function (text) {
         console.log('CD ecrire: ', text);
     };
+    Cd.prototype.delete = function () {
+        throw new Error('CD cannot be erased');
+    };
     return Cd;
 }(Support));
 var Person = /** @class */ (function () {
@@ -65,6 +72,9 @@ var Person = /** @class */ (function () {
     }
     Person.prototype.ecrire = function (text, support) {
         support.ecrire(text);
+    };
+    Person.prototype.delete = function (support) {
+        support.delete();
     };
     return Person;
 }());
@@ -75,3 +85,5 @@ var moi = new Person();
 moi.ecrire('Hello', stdOutput);
 moi.ecrire('Hello', fichier);
 moi.ecrire('Hello', cd);
+moi.delete(stdOutput);
+moi.delete(fichier);
