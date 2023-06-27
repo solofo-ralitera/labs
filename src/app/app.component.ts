@@ -12,7 +12,7 @@ import { ViewEncapsulation } from '@angular/core';
   styleUrls: ['./app.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   counter: number = 0;
   title: string = 'angular';
   obj: {
@@ -23,29 +23,7 @@ export class AppComponent implements OnInit {
     counter: 0,
   };
 
-  constructor() {
-  }
-
- 
-  ngOnInit(): void {
-    window.setInterval(() => {
-      this.obj = {...this.obj, counter: ++this.obj.counter};
-    }, 1000);
-  }
-
-  public testClick(): void {
-    console.log(this.obj);
-  }
-  
-  public changed(): void {
-    console.log('changed')
-  }
-
-  public logEvent(text: string): void {
-    console.log(text);
-  }
-
-  public getText(): string {
-    return 'zzeze';
+  testClick() {
+    this.obj = {...this.obj, text: 'Coco'};
   }
 }

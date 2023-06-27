@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -7,13 +7,15 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewE
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css'],
   encapsulation: ViewEncapsulation.ShadowDom,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TestComponent implements OnChanges {
-  private _title: number = 0;
-  @Input()
-  set title(txt: number) {
-    this._title = txt;
-    // 
+export class TestComponent {
+  @Input() title: {
+    text: string,
+    counter: number,
+  } = {
+    text: 'Hello',
+    counter: 0,
   };
 
   @Input()
@@ -22,17 +24,15 @@ export class TestComponent implements OnChanges {
   @Output()
   textChange: EventEmitter<string> = new EventEmitter();
 
-  @Output() 
-  onButtonCLick: EventEmitter<string> = new EventEmitter();
-
-  constructor() {
-  }
-  
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+  timeout(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  changeText(e: Event) {
-    this.textChange.emit((e.target as HTMLInputElement).value);
+  changeText() {
+    this.timeout(0).then(v => {
+      this.title.text = 'Text changed';
+      console.log(this.title);
+   });
+
   }
 }
