@@ -1,40 +1,62 @@
 /**
  * Exo1: un personne peut ecrire sur un support (standard output, fichier, bdd, tableau, cahier...)
  *
- * Etape 2:
- *  une classs par type de support
- * Contrainte:
- *  - si nouveau support, il faut rajouter la méthode d'ecriture correspondants à ce support
- *  - on a une dépendance de chaque support dans Person (ligne 27 et 32) + new à chaque ecriture
+ * Etape 3:
+ *  unification des méthodes ecrire dans la classe personne
+ *  suppr des new ...() dans Person
  *
- * Evolution: traiter cette dépendance et minimiser les modifications à faire à chaque rajout de support
+ * Contrainte:
+ *  - si nouveau support, on doit toujours modifier la méthode ecrire pour le nouveau support
+ *
+ * Evolution: minimiser les modifications à faire à chaque rajout de support
  */
-var StdOutput = /** @class */ (function () {
-    function StdOutput() {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Support = /** @class */ (function () {
+    function Support() {
     }
-    StdOutput.prototype.log = function (text) {
+    Support.prototype.ecrire = function (text) {
+    };
+    return Support;
+}());
+var StdOutput = /** @class */ (function (_super) {
+    __extends(StdOutput, _super);
+    function StdOutput() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    StdOutput.prototype.ecrire = function (text) {
         console.log('Standard output: ', text);
     };
     return StdOutput;
-}());
-var Fichier = /** @class */ (function () {
+}(Support));
+var Fichier = /** @class */ (function (_super) {
+    __extends(Fichier, _super);
     function Fichier() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Fichier.prototype.ecrire = function (text) {
         console.log('Fichier ecrire: ', text);
     };
     return Fichier;
-}());
+}(Support));
 var Person = /** @class */ (function () {
     function Person() {
     }
     Person.prototype.ecrire = function (text, support) {
-        if (support instanceof StdOutput) {
-            support.log(text);
-        }
-        else if (support instanceof Fichier) {
-            support.ecrire(text);
-        }
+        support.ecrire(text);
     };
     return Person;
 }());
