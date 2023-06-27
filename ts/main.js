@@ -1,14 +1,14 @@
 /**
  * Exo1: un personne peut ecrire sur un support (standard output, fichier, bdd, tableau, cahier...)
  *
- * Etape 3:
- *  unification des méthodes ecrire dans la classe personne
- *  suppr des new ...() dans Person
+ * Etape 4:
+ *  Création d'une lcass mère pour tous les support
+ *  Plus besoin de modifier Person pour écrire sur un nouveau support
  *
  * Contrainte:
- *  - si nouveau support, on doit toujours modifier la méthode ecrire pour le nouveau support
+ *  - Chaque support n'est pas obligé d'implémenter la méthode écrire
  *
- * Evolution: minimiser les modifications à faire à chaque rajout de support
+ * Evolution: forcer chaque support à implémenter ecrire
  */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -28,8 +28,6 @@ var __extends = (this && this.__extends) || (function () {
 var Support = /** @class */ (function () {
     function Support() {
     }
-    Support.prototype.ecrire = function (text) {
-    };
     return Support;
 }());
 var StdOutput = /** @class */ (function (_super) {
@@ -52,6 +50,16 @@ var Fichier = /** @class */ (function (_super) {
     };
     return Fichier;
 }(Support));
+var Cd = /** @class */ (function (_super) {
+    __extends(Cd, _super);
+    function Cd() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Cd.prototype.ecrire = function (text) {
+        console.log('CD ecrire: ', text);
+    };
+    return Cd;
+}(Support));
 var Person = /** @class */ (function () {
     function Person() {
     }
@@ -62,6 +70,8 @@ var Person = /** @class */ (function () {
 }());
 var stdOutput = new StdOutput();
 var fichier = new Fichier();
+var cd = new Cd();
 var moi = new Person();
 moi.ecrire('Hello', stdOutput);
 moi.ecrire('Hello', fichier);
+moi.ecrire('Hello', cd);

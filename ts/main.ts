@@ -1,30 +1,32 @@
 /**
  * Exo1: un personne peut ecrire sur un support (standard output, fichier, bdd, tableau, cahier...)
  * 
- * Etape 4: 
- *  Création d'une lcass mère pour tous les support
- *  Plus besoin de modifier Person pour écrire sur un nouveau support
+ * Etape 5: 
+ *  forcer les enfants de SUpport à implémenter la méthode ecrire
  * 
- * Contrainte: 
- *  - Chaque support n'est pas obligé d'implémenter la méthode écrire
  * 
- * Evolution: forcer chaque support à implémenter ecrire
+ * Evolution: Possibilité d'effacer un support
  */
 
-class Support {
-  public ecrire(text: string): void {
-  }
+abstract class Support {
+  public abstract ecrire(text: string): void;
 } 
 
 class StdOutput extends Support {
-  public override ecrire(text: string): void {
+  public ecrire(text: string): void {
     console.log('Standard output: ', text);
   }
 }
 
 class Fichier extends Support {
-  public override ecrire(text: string): void {
+  public ecrire(text: string): void {
     console.log('Fichier ecrire: ', text);
+  }
+}
+
+class Cd extends Support {
+  public ecrire(text: string): void {
+    console.log('CD ecrire: ', text);
   }
 }
 
@@ -36,7 +38,9 @@ class Person {
 
 const stdOutput = new StdOutput();
 const fichier = new Fichier();
+const cd = new Cd();
 
 const moi = new Person();
 moi.ecrire('Hello', stdOutput);
 moi.ecrire('Hello', fichier);
+moi.ecrire('Hello', cd);
