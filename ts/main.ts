@@ -1,17 +1,18 @@
 /**
  * Exo1: un personne peut ecrire sur un support (standard output, fichier, bdd, tableau, cahier...)
  * 
- * Etape 2: 
- *  une classs par type de support
- * Contrainte: 
- *  - si nouveau support, il faut rajouter la méthode d'ecriture correspondants à ce support 
- *  - on a une dépendance de chaque support dans Person (ligne 27 et 32) + new à chaque ecriture
+ * Etape 3: 
+ *  unification des méthodes ecrire dans la classe personne
+ *  suppr des new ...() dans Person
  * 
- * Evolution: traiter cette dépendance et minimiser les modifications à faire à chaque rajout de support
+ * Contrainte: 
+ *  - si nouveau support, on doit toujours modifier la méthode ecrire pour le nouveau support
+ * 
+ * Evolution: minimiser les modifications à faire à chaque rajout de support
  */
 
 class StdOutput {
-  public ecrire(text: string): void {
+  public log(text: string): void {
     console.log('Standard output: ', text);
   }
 }
@@ -23,18 +24,17 @@ class Fichier {
 }
 
 class Person {
-  public ecrireStdOutput(text: string) {
-    const output = new StdOutput();
-    output.ecrire(text);
+  public ecrire(text: string, support: StdOutput | Fichier) {
+    if (support instanceof StdOutput) {
+      support.log(text);
+    } else if (support instanceof Fichier) {
+      support.ecrire(text);
+    }
   }
-
-  public ecrireFichier(text: string) {
-    const output = new Fichier();
-    output.ecrire(text);
-  }
-
 }
+const stdOutput = new StdOutput();
+const fichier = new Fichier();
 
 const moi = new Person();
-moi.ecrireStdOutput('Hello');
-moi.ecrireFichier('Hello');
+moi.ecrire('Hello', stdOutput);
+moi.ecrire('Hello', fichier);

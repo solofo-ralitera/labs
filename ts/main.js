@@ -1,14 +1,18 @@
 /**
  * Exo1: un personne peut ecrire sur un support (standard output, fichier, bdd, tableau, cahier...)
  *
- * Etape 1:
- *  - 2 classes:  Person et StdOutput
- * Evolution: rajouter un nouveau support pour ecrire
+ * Etape 2:
+ *  une classs par type de support
+ * Contrainte:
+ *  - si nouveau support, il faut rajouter la méthode d'ecriture correspondants à ce support
+ *  - on a une dépendance de chaque support dans Person (ligne 27 et 32) + new à chaque ecriture
+ *
+ * Evolution: traiter cette dépendance et minimiser les modifications à faire à chaque rajout de support
  */
 var StdOutput = /** @class */ (function () {
     function StdOutput() {
     }
-    StdOutput.prototype.ecrire = function (text) {
+    StdOutput.prototype.log = function (text) {
         console.log('Standard output: ', text);
     };
     return StdOutput;
@@ -24,16 +28,18 @@ var Fichier = /** @class */ (function () {
 var Person = /** @class */ (function () {
     function Person() {
     }
-    Person.prototype.ecrireStdOutput = function (text) {
-        var output = new StdOutput();
-        output.ecrire(text);
-    };
-    Person.prototype.ecrireFichier = function (text) {
-        var output = new Fichier();
-        output.ecrire(text);
+    Person.prototype.ecrire = function (text, support) {
+        if (support instanceof StdOutput) {
+            support.log(text);
+        }
+        else if (support instanceof Fichier) {
+            support.ecrire(text);
+        }
     };
     return Person;
 }());
+var stdOutput = new StdOutput();
+var fichier = new Fichier();
 var moi = new Person();
-moi.ecrireStdOutput('Hello');
-moi.ecrireFichier('Hello');
+moi.ecrire('Hello', stdOutput);
+moi.ecrire('Hello', fichier);
