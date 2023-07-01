@@ -6,33 +6,14 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Out
   imports: [],
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TestComponent {
-  @Input() title: {
-    text: string,
-    counter: number,
+  @Input()
+  title: {
+    title: string
   } = {
-    text: 'Hello',
-    counter: 0,
+    title: '',
   };
 
-  @Input()
-  text: string = '';
-
-  @Output()
-  textChange: EventEmitter<string> = new EventEmitter();
-
-  timeout(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-  changeText() {
-    this.timeout(0).then(v => {
-      this.title.text = 'Text changed';
-      console.log(this.title);
-   });
-
-  }
 }

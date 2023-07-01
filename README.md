@@ -42,7 +42,7 @@
 
 ## ChangeDetection OnPush
     - event
-    - ref change
+    - input ref change
 
 ## [lifecycle](https://angular.io/guide/lifecycle-hooks)
   - ngOnInit

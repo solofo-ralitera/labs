@@ -13,17 +13,17 @@ import { ViewEncapsulation } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  counter: number = 0;
-  title: string = 'angular';
-  obj: {
-    text: string,
-    counter: number,
-  } = {
-    text: 'Hello',
-    counter: 0,
+  obj = {
+    title: 'Angular'
   };
 
-  testClick() {
-    this.obj = {...this.obj, text: 'Coco'};
+  constructor(private cdr: ChangeDetectorRef) {
+
   }
+
+  changeTitle() {
+    this.obj = {...this.obj, title: 'New title'};
+    this.cdr.detectChanges();
+  }
+
 }
