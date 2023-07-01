@@ -1,1 +1,14 @@
 App works
+<ng-container>
+  <div>Test</div>
+</ng-container>
+<div [ngTemplateOutlet]="tpl"></div>
+
+<app-test>
+  <app-test2></app-test2>
+</app-test>
+
+<ng-template #tpl>
+  Test sdfds
+</ng-template>
+
