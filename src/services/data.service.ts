@@ -1,5 +1,9 @@
+import { Injectable } from "@angular/core";
 import { IUserService } from "./user.service";
 
+@Injectable({
+  providedIn: 'root',
+})
 export class DataService implements IUserService {
   constructor() {
     console.log('DataService created');

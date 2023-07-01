@@ -7,20 +7,18 @@ import { UserService } from 'src/services/user.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div>User works : {{userService.connectedUserName}}</div>
+    <div>User works</div>
   `,
   styleUrls: [],
   providers: [
-    /* {
-      provide: UserService,
-      useClass: UserService,
-    }, */
+
   ]
 })
 export class UserComponent {
-  public userService: UserService;
+  // public userService: UserService;
 
-  constructor() {
-    this.userService = inject(UserService);
+  constructor(public userService: UserService) {
+    // this.userService = inject('UserService');
+    console.log(this.userService);
   }
 }

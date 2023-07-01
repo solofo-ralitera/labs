@@ -10,10 +10,10 @@ import { UserComponent } from './user.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   providers: [
-    /* {
+    {
       provide: UserService,
       useClass: UserService,
-    }, */
+    },
     // DataService,
   ]
 })
@@ -23,7 +23,6 @@ export class AppComponent {
   // public dataService: DataService = inject(DataService);
 
   constructor(
-    // @Inject(UserService) public userService: UserService,
     public userService: UserService,
   ) {
   }

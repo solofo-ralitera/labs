@@ -1,8 +1,11 @@
-import { Injectable } from "@angular/core";
+import { Injectable, InjectionToken } from "@angular/core";
+import { DataService } from "./data.service";
 
 export interface IUserService {
   getUserName(): Promise<string>;
 }
+
+// export const USER_SERVICE_TOKEN = new InjectionToken<IUserService>('User service token');
 
 @Injectable({
   providedIn: 'root',
@@ -10,9 +13,12 @@ export interface IUserService {
 export class UserService implements IUserService {
   public connectedUserName: string = '';
 
-  constructor() {
+  constructor(public dataService: DataService) {
     console.log('Create user service');
     this.getUserName();
+    this.dataService.getUserName().then(() => {
+      console.log('Icicicicic');
+    })
   }
 
   public getUserName(): Promise<string> {
