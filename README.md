@@ -4,9 +4,11 @@
     - selector [...]
 - DI: ElementRef / nativeElement
 - ngAfterViewInit
+- @HostListener
 - @Input
     - [...]="" VS ...=""
-- @HostListener
+    - selector, autres inputs
+    - set ou OnChanges
 - (r) blink
 
 > back to branch 5
