@@ -47,6 +47,7 @@ Autre IDE ?
 
 ### Angular - Directive
 - cf branche 5
+- (POO generique - branche 1)
 - (r) Implement generic widget
 
 ### Angular - Form
