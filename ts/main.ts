@@ -47,7 +47,13 @@ class Person {
 
   public delete(support: Deletable) {
     support.delete();
-}
+  }
+
+  public write<T>(support: T, text: string): T {
+
+    
+    return {} as T;
+  }
 }
 
 const stdOutput = new StdOutput();
@@ -61,3 +67,5 @@ moi.ecrire('Hello', cd);
 
 moi.delete(stdOutput);
 moi.delete(fichier);
+
+moi.write<Fichier>(fichier, 'helllo');
