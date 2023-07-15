@@ -3,7 +3,7 @@
     - standalone
     - selector [...]
 - DI: ElementRef / nativeElement
-- ngAfterViewInit
+- ngAfterViewInit / ngOnInit
 - @HostListener
 - @Input
     - [...]="" VS ...=""
