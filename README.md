@@ -7,3 +7,16 @@ CanMatch     CanLoad        CanDeactivate
                             CanActivateChild
                             CanActivate
 ```
+
+
+
+
+
+
+  root
+  |
+  ...
+  |
+parent
+  |
+composant - route 

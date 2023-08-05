@@ -3,8 +3,8 @@ import { Route, Routes, provideRouter } from '@angular/router';
 import { Page1Component } from './pages/page1/page1.component';
 import { Page3Component } from './pages/page3/page3.component';
 import { Page2Component } from './pages/page2/page2.component';
-import { AuthService } from './services/auth.service';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { AuthService, AuthServiceTest } from './services/auth.service';
 
 const routes: Routes = [
   {
@@ -13,10 +13,10 @@ const routes: Routes = [
     title: () => {
       return 'fn';
     },
+    providers: [],
     canMatch: [(): boolean => {
-      const service = inject(AuthService);
-      return service.isLogged();
-    }]
+      return true;
+    }],
   },
   {
     path: 'page2', loadComponent: () => import('./pages/page2/page2.component').then(c => c.Page2Component),
@@ -38,6 +38,6 @@ const routes: Routes = [
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ]
 };

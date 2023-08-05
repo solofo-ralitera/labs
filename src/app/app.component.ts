@@ -1,6 +1,35 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 
+
+interface Article {
+  id: number;
+  title: number;
+  summary: string;
+  text: string;
+}
+
+type ArticlePart = Pick<Article, 'id' | 'title'>;
+
+interface IUser {
+  id: number;
+  name: string;
+  surname: string;
+  roles: string[];
+}
+
+type TUser = {
+  id: number
+  name: string
+}
+
+class CUser implements IUser {
+  public id: number = Math.random();
+  public name: string = '';
+  public surname: string = '';
+  public roles: string[] = ['Authenticated'];
+}
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -10,4 +39,15 @@ import { RouterLink, RouterModule } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular';
+
+  public createUser(): IUser {
+    const newUser = new CUser();
+    newUser.name = 'Test';
+    console.log(newUser);
+    return newUser;
+  }
+
+  public displayUser(user: IUser) {
+
+  }
 }

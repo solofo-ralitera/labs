@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, EnvironmentInjector, OnInit, ViewChild, ViewContainerRef, createComponent } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
@@ -10,15 +10,16 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChildComponent {
+  @ViewChild('container', {
+    read: ViewContainerRef,
+  }) container!: ViewContainerRef;
+
   public id: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
+    private injector: EnvironmentInjector,
   ) {
     // this.id = this.route.snapshot.paramMap.get('id');
-
-    this.route.paramMap.subscribe(param => {
-      this.id = param.get('id');
-    });
-  }
+  } 
 }

@@ -10,5 +10,5 @@ import { RouterLink, RouterModule } from '@angular/router';
   styleUrls: ['./page3.component.css']
 })
 export class Page3Component {
-
+  public title: string = 'P3 Component';
 }
