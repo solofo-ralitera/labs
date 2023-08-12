@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
+import { Page1Component } from './pages/page1/page1.component';
+import { Page2Component } from './pages/page2/page2.component';
 
 
 interface Article {
@@ -33,12 +35,12 @@ class CUser implements IUser {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, RouterLink],
+  imports: [RouterModule, RouterLink, Page1Component, Page2Component],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular';
+  title = 'angular!!!';
 
   public createUser(): IUser {
     const newUser = new CUser();
