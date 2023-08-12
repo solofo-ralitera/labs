@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, EnvironmentInjector, OnInit, ViewChild, ViewContainerRef, createComponent } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-child',
@@ -20,6 +20,12 @@ export class ChildComponent {
     private route: ActivatedRoute,
     private injector: EnvironmentInjector,
   ) {
-    // this.id = this.route.snapshot.paramMap.get('id');
+    this.route.params.subscribe(p => {
+      
+    })
+    /*
+    this.route.paramMap.subscribe((p: ParamMap) => {
+      this.id = p.get('id');
+    });*/
   } 
 }
